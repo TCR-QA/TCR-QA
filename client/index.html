@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCR-34 Group</title>
+</head>
+<body>
+    <h1>Hello, world!</h1>
+    <p id="server-time"></p>
+
+    <script>
+        const api = async (url, data) => {
+            const response = await fetch(url, {
+                method: data == undefined ? "GET" : "POST",
+                body: JSON.stringify(data)
+            });
+            return {
+                data: await response.json(),
+                status: response.status
+            };
+        }
+        
+    </script>
+</body>
+</html>
